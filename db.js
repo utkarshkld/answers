@@ -9,7 +9,8 @@ mongoose.connect('mongodb+srv://utkarshkld:hX69wWc61x8uE6Rq@cluster0.kvivsot.mon
 const answerschema = new mongoose.Schema({
     // Schema definition here
     question1: String,
-    question2: String
+    question2: String,
+    question3: String
 })
 
 const answer = mongoose.model('Answers', answerschema)
