@@ -11,6 +11,7 @@ app.post('/add',async (req, res) => {
     await answer.create({
         question1: req.body.question1,
         question2: req.body.question2,
+        question3: req.body.question3
     })
     res.status(200).json({
         message:"Added Successfully"
