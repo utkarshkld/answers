@@ -17,6 +17,12 @@ app.post('/add',async (req, res) => {
         message:"Added Successfully"
     })
 })
+app.get("/getData",async (req,res) => {
+    const response=await answer.find({})
+    res.status(200).json({
+        data:response
+    })
+})
 app.listen(3000,(req,res)=> {
     console.log("Server is running on port 3000")
 })
