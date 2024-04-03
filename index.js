@@ -9,7 +9,7 @@ app.use(express.json())
 app.post('/add',async (req, res) => {
     console.log(req.body)
     const response = await answer.findOne({ question2: req.body.question2});
-    if(!response){
+    if(response){
         res.status(404).send({ message:"User Exists with this number"});
         return;
     }
