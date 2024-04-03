@@ -1,4 +1,4 @@
-const {answer, answer, answer} = require("./db")
+const {answer, answer} = require("./db")
 const express = require('express')
 const cors = require('cors')
 
