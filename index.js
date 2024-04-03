@@ -1,4 +1,4 @@
-const {answer, answer} = require("./db")
+const {answer} = require("./db")
 const express = require('express')
 const cors = require('cors')
 
@@ -8,9 +8,10 @@ app.use(express.json())
 
 app.post('/add',async (req, res) => {
     console.log(req.body)
-    let response = await answer.findOne({ question2: req.body.question2});
+    const response = await answer.findOne({ question2: req.body.question2});
     if(!response){
-        res.status(404).json({ message: "User already exists with the same number." });
+        res.status(404).send({ message:"User Exists with this number"});
+        return;
     }
     await answer.create({
         question1: req.body.question1,
